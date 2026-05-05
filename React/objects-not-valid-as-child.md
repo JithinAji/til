@@ -7,7 +7,7 @@ Rendering a plain object in JSX throws:
 "Objects are not valid as a React child"
 
 ## Example
-
+```
 /*
    data = {
      a: 3,
@@ -18,8 +18,8 @@ Rendering a plain object in JSX throws:
 
 export const DisplayJSON = ({ data  }) => {
   return <pre>{data}</pre> // ❌ Error
-  
 }
+```
 
 ## Why
 
