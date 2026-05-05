@@ -1,4 +1,4 @@
 # A collection of things I learn daily
 
 ## React
-- [Objects are not valid as a React child](react/objects-not-valid-as-child.md)
+- [Objects are not valid as a React child](React/objects-not-valid-as-child.md)
