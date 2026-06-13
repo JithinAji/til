@@ -12,4 +12,4 @@
 - [rollup](Javascript/rollup.md)
 - [namespace](Javascript/namespace.md)
 - [Object.prototype.hasOwnProperty.call() vs obj.hasOwnProperty()](Javascript/Object_prototype_hasOwnProperty_call.md)
-- [nvmrc](Javacript/nvmrc.md)
+- [nvmrc](Javascript/nvmrc.md)
