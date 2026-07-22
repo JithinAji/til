@@ -14,6 +14,7 @@
 - [Object.prototype.hasOwnProperty.call() vs obj.hasOwnProperty()](Javascript/Object_prototype_hasOwnProperty_call.md)
 - [nvmrc](Javascript/nvmrc.md)
 - [JSDoc](Javascript/JSDoc.md)
+- [Performance Observer](Javascript/performanceObserver.md)
 
 
 ## Safari
