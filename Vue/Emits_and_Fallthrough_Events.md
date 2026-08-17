@@ -1,10 +1,12 @@
-t is `emits`?
+# Vue 3: `emits` and Fallthrough Events
+
+## What is `emits`?
 
 In Vue 3, a component can explicitly declare the events it emits using the `emits` option.
 
 ```js
 emits: ['click', 'change']
-`````
+```
 
 This tells Vue:
 
@@ -18,7 +20,7 @@ If a parent uses:
 
 ```vue
 <MyComponent @click="handleClick" />
-`````
+```
 
 but `click` is **not declared** in the component's `emits`, Vue can treat the listener as a **fallthrough attribute**.
 
@@ -33,70 +35,62 @@ However, it can cause problems if the component also manually emits the same eve
 ```text
 Physical click
      │
-          ├──> Root DOM @click
-               │       └──> Parent handler
-                    │
-                         └──> Component handler
-                                      └──> $emit('click')
-                                                           └──> Parent handler
-                                                           `````
+     ├──> Root DOM @click
+     │       └──> Parent handler
+     │
+     └──> Component handler
+             └──> $emit('click')
+                     └──> Parent handler
+```
 
-                                                           The parent handler can be triggered twice.
+The parent handler can be triggered twice.
 
-                                                           ---
+---
 
-                                                           ## With `emits`
+## With `emits`
 
-                                                           Declare the event:
+Declare the event:
 
-                                                           ```js
-                                                           emits: ['click']
-                                                           `````
+```js
+emits: ['click']
+```
 
-                                                           Now Vue knows that `click` is a **component event**.
+Now Vue knows that `click` is a **component event**.
 
-                                                           The event flow becomes:
+The event flow becomes:
 
-                                                           ```text
-                                                           Physical click
-                                                                 ↓
-                                                                 Component handler
-                                                                       ↓
-                                                                       $emit('click')
-                                                                             ↓
-                                                                             Parent @click
-                                                                             `````
+```text
+Physical click
+      ↓
+Component handler
+      ↓
+$emit('click')
+      ↓
+Parent @click
+```
 
-                                                                             The listener is handled as a component event instead of falling through to the root DOM element.
+The listener is handled as a component event instead of falling through to the root DOM element.
 
-                                                                             ---
+---
 
-                                                                             ## General Rule
+## General Rule
 
-                                                                             If a component uses:
+If a component uses:
 
-                                                                             ```js
-                                                                             this.$emit('someEvent')
-                                                                             `````
+```js
+this.$emit('someEvent')
+```
 
-                                                                             declare the event in:
+declare the event in:
 
-                                                                             ```js
-                                                                             emits: ['someEvent']
-                                                                             `````
+```js
+emits: ['someEvent']
+```
 
-                                                                             This makes the component's event API explicit and avoids unintended fallthrough behavior.
+This makes the component's event API explicit and avoids unintended fallthrough behavior.
 
-                                                                             ## Key Takeaway
+## Key Takeaway
 
-                                                                             **Props come into a component. Events go out of a component.**
+**Props come into a component. Events go out of a component.**
 
-                                                                             Declaring `emits` tells Vue which events intentionally belong to the component rather than being treated as fallthrough listeners.
-
-                                                                             ````
-                                                                             ````
-                                                                             ````
-                                                           ````
-                                                           ````
-````
-````
+Declaring `emits` tells Vue which events intentionally belong to the component rather than being treated as fallthrough listeners.
