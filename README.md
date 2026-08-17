@@ -19,3 +19,8 @@
 
 ## Safari
 - [native videoplayer control](Safari/videoplayer.md)
+
+
+## Vue js
+
+-[Emits and Fall through event](Vue/Emits_and_Fallthrough_Events.md)
