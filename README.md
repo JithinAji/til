@@ -15,6 +15,7 @@
 - [nvmrc](Javascript/nvmrc.md)
 - [JSDoc](Javascript/JSDoc.md)
 - [Performance Observer](Javascript/performanceObserver.md)
+- [Missing Semicolon Error](Javascript/missing-semicolon-array-error.md)
 
 
 ## Safari
