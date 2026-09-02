@@ -16,6 +16,7 @@
 - [JSDoc](Javascript/JSDoc.md)
 - [Performance Observer](Javascript/performanceObserver.md)
 - [Missing Semicolon Error](Javascript/missing-semicolon-array-error.md)
+- [Undeclared Variables Behave Differently in Strict mode](Javascript/strict_mode_variable_declaration.md)
 
 
 ## Safari
