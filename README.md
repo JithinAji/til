@@ -1,5 +1,9 @@
 # A collection of things I learn daily
 
+## AI
+
+- [Boilerplate creating prompt](AI/boilerplate-prompt.md)
+
 ## React
 - [Objects are not valid as a React child](React/objects-not-valid-as-child.md)
 
